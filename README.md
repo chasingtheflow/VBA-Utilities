@@ -10,4 +10,4 @@ Here is a collection of VBA Utilities intended to provide a generic bootstrap fo
 * Creating pivot tables easily from VBA
 * Assorted other helper functions and subroutines
 
-These Utilities are provided as is and with no warranty. They've proved useful to me in expediting my work in Excel VBA, hopefully they prove useful.
+These utilities are provided as is and with no warranty. They've proved useful to me in expediting my work in Excel VBA, hopefully they prove useful.
