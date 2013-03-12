@@ -5,7 +5,7 @@ Here is a collection of VBA Utilities intended to provide a generic bootstrap fo
 * Parsing headers into dictionaries
 * Processing exception files
 * Loading pipe-separated txt files into Excel
-* Helper funtions for working with Fiscal Years & Quarters
+* Helper functions for working with Fiscal Years & Quarters
 * Basic error logging functionality
 * Creating pivot tables easily from VBA
 * Assorted other helper functions and subroutines
