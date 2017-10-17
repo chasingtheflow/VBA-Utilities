@@ -182,7 +182,7 @@ Public Function SheetExists(ByVal sheetName As String) As Boolean
     'Convenience function for checking if a given sheet exists.
     
     On Error Resume Next
-    SheetExists = (Sheets(sheetName).Name <> "")
+    SheetExists = (Sheets(sheetName).Name <> vbNullString)
     On Error GoTo 0
 End Function
 
@@ -352,7 +352,7 @@ Private Function read2DExceptionList(fileName) As Dictionary
     On Error Resume Next
 
     delimiter = ":"
-    errorLog = ""
+    errorLog = vbNullString
 
     fHandle = FreeFile()
     Open fileName For Input As fHandle
@@ -364,7 +364,7 @@ Private Function read2DExceptionList(fileName) As Dictionary
         Line Input #fHandle, fLine
         LineNum = LineNum + 1
         fLine = Trim(fLine)
-        If fLine <> "" And Strings.Left(fLine, 1) <> "'" And Strings.Left(fLine, 1) <> "#" Then    'comments delimited by ' or #
+        If fLine <> vbNullString And Strings.Left(fLine, 1) <> "'" And Strings.Left(fLine, 1) <> "#" Then    'comments delimited by ' or #
             pos = InStr(1, fLine, "'")
             If pos = 0 Then pos = InStr(1, fLine, "#")
             If pos = 0 Then
@@ -398,7 +398,7 @@ Private Function read2DExceptionList(fileName) As Dictionary
     Loop
     Close fHandle
 
-    If errorLog <> "" Then
+    If errorLog <> vbNullString Then
         Dim resp As Integer
         resp = MsgBox("Errors were found in " & fileName & ":" & Chr(13) & Chr(13) & errorLog & _
                       Chr(13) & "Continue anyway?", vbCritical + vbYesNo + vbDefaultButton2, "Error(s) in exception list!")
@@ -423,7 +423,7 @@ End Function
 
 Function FileExists(FileName As String) As Boolean
 'Checks for the existance of a file referenced by FileName
-    FileExists = (Dir(FileName) > "")
+    FileExists = (Dir(FileName) > vbNullString)
 End Function
 
 
